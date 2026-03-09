@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Somnio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:           #0d0d1a;
+            --surface:      #12122a;
+            --border:       #2a2a4a;
+            --primary:      #7b5ea7;
+            --accent:       #a67fd4;
+            --gold:         #c9a84c;
+            --text:         #e8e4f0;
+            --text-muted:   #8888aa;
+            --radius:       12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* ── Starfield background ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 42% 8%,  rgba(255,255,255,0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 68% 35%, rgba(255,255,255,0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 83% 15%, rgba(255,255,255,0.2) 0%, transparent 100%),
+                radial-gradient(1px 1px at 27% 55%, rgba(255,255,255,0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 91% 62%, rgba(255,255,255,0.4) 0%, transparent 100%),
+                radial-gradient(1px 1px at 5%  78%, rgba(255,255,255,0.2) 0%, transparent 100%),
+                radial-gradient(1px 1px at 54% 88%, rgba(255,255,255,0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 74% 92%, rgba(255,255,255,0.2) 0%, transparent 100%),
+                radial-gradient(1px 1px at 35% 72%, rgba(255,255,255,0.4) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Header ── */
+        header {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(123,94,167,0.15) 0%, transparent 100%);
+        }
+
+        .logo-symbol {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            display: block;
+            filter: drop-shadow(0 0 12px rgba(166,127,212,0.6));
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        header .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* ── Main content ── */
+        main {
+            position: relative;
+            z-index: 1;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* ── Effective date banner ── */
+        .effective-date {
+            background: rgba(123,94,167,0.12);
+            border: 1px solid rgba(123,94,167,0.3);
+            border-radius: var(--radius);
+            padding: 16px 24px;
+            margin-bottom: 40px;
+            font-size: 0.88rem;
+            color: var(--accent);
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Section cards ── */
+        .section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .section:hover {
+            border-color: rgba(123,94,167,0.4);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .section-icon {
+            font-size: 1.3rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(123,94,167,0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.06em;
+        }
+
+        .section p {
+            color: var(--text);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .section p:last-child { margin-bottom: 0; }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+
+        .section ul li {
+            font-size: 0.95rem;
+            color: var(--text);
+            padding: 6px 0 6px 20px;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .section ul li:last-child { border-bottom: none; }
+
+        .section ul li::before {
+            content: '◈';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 0.7rem;
+            top: 9px;
+        }
+
+        strong {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* ── Contact section ── */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(123,94,167,0.15), rgba(201,168,76,0.08));
+            border: 1px solid rgba(123,94,167,0.35);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            color: var(--gold);
+            letter-spacing: 0.08em;
+            margin-bottom: 14px;
+        }
+
+        .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(166,127,212,0.4);
+            padding-bottom: 1px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .contact-card a:hover {
+            color: var(--text);
+            border-color: var(--text);
+        }
+
+        /* ── Footer ── */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            header h1   { font-size: 1.6rem; }
+            main        { padding: 32px 16px 60px; }
+            .section    { padding: 24px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="logo-symbol">🌙</span>
+        <h1>Somnio</h1>
+        <p class="subtitle">Privacy Policy</p>
+    </header>
+
+    <main>
+
+        <div class="effective-date">
+            Effective date: 9 March 2026 &nbsp;·&nbsp; Last updated: 9 March 2026
+        </div>
+
+        <!-- Introduction -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">📖</div>
+                <h2>Introduction</h2>
+            </div>
+            <p>Somnio ("we", "our", or "us") is a dream journaling and AI interpretation mobile application. This Privacy Policy explains how we collect, use, store, and protect your personal information when you use the Somnio app.</p>
+            <p>By using Somnio, you agree to the collection and use of information in accordance with this policy. We are committed to handling your data with care and transparency.</p>
+        </div>
+
+        <!-- Information We Collect -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">🗂️</div>
+                <h2>Information We Collect</h2>
+            </div>
+            <p>We collect the following categories of information:</p>
+            <ul>
+                <li><strong>Account information</strong> — your name and email address, provided at registration</li>
+                <li><strong>Dream content</strong> — dream descriptions you type or dictate, and the AI interpretations generated from them</li>
+                <li><strong>Voice recordings</strong> — audio recordings made within the app when you use the voice input feature, processed for transcription and then discarded</li>
+                <li><strong>Subscription information</strong> — your subscription tier (Free, Standard, or Premium) and payment status, managed via Google Play</li>
+                <li><strong>Personalisation keywords</strong> — optional keywords you provide to personalise your dream interpretations</li>
+                <li><strong>Device information</strong> — device token used to deliver push notifications</li>
+            </ul>
+        </div>
+
+        <!-- How We Use Your Information -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">⚙️</div>
+                <h2>How We Use Your Information</h2>
+            </div>
+            <p>We use your information solely to provide and improve the Somnio service:</p>
+            <ul>
+                <li>To create and manage your account</li>
+                <li>To generate AI-powered dream interpretations via Azure OpenAI</li>
+                <li>To store your dream journal entries securely in the cloud</li>
+                <li>To enforce subscription tier feature limits</li>
+                <li>To send you push notifications relevant to your account</li>
+                <li>To respond to support requests</li>
+            </ul>
+            <p>We do <strong>not</strong> use your dream content for advertising, profiling, or any purpose other than delivering your interpretations.</p>
+        </div>
+
+        <!-- Data Storage -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">🗄️</div>
+                <h2>Data Storage and Security</h2>
+            </div>
+            <p>Your data is stored on secure Microsoft Azure cloud infrastructure located in the United States (East US 2 region). We use the following Azure services:</p>
+            <ul>
+                <li><strong>Azure SQL Database</strong> — account and subscription information</li>
+                <li><strong>Azure Cosmos DB</strong> — dream journal entries and interpretations</li>
+                <li><strong>Azure Blob Storage</strong> — voice recording files (temporary, pending transcription)</li>
+                <li><strong>Azure Key Vault</strong> — secure storage of all application secrets and credentials</li>
+            </ul>
+            <p>All data is transmitted over HTTPS. Passwords are hashed using BCrypt and never stored in plain text. We implement JWT-based authentication with refresh token rotation.</p>
+        </div>
+
+        <!-- Voice Recordings -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">🎙️</div>
+                <h2>Voice Recordings</h2>
+            </div>
+            <p>When you use the voice recording feature, your audio is uploaded to Azure Blob Storage solely for the purpose of transcription via Azure AI Speech Services. Once transcription is complete, the audio file is deleted from storage. We do not retain, analyse, or share your voice recordings for any other purpose.</p>
+            <p>Voice recording requires your explicit permission via your device's microphone permission prompt.</p>
+        </div>
+
+        <!-- Third-Party Services -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">🔗</div>
+                <h2>Third-Party Services</h2>
+            </div>
+            <p>Somnio uses the following third-party services to deliver its functionality:</p>
+            <ul>
+                <li><strong>Azure OpenAI (Microsoft)</strong> — AI dream interpretation generation</li>
+                <li><strong>Azure AI Speech Services (Microsoft)</strong> — voice-to-text transcription</li>
+                <li><strong>Azure Notification Hubs (Microsoft)</strong> — push notifications</li>
+                <li><strong>Google Play Billing</strong> — subscription payment processing</li>
+            </ul>
+            <p>Each of these services operates under its own privacy policy. We do not sell or share your personal data with any third party for marketing purposes.</p>
+        </div>
+
+        <!-- Data Retention -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">🕰️</div>
+                <h2>Data Retention</h2>
+            </div>
+            <p>We retain your account data and dream journal entries for as long as your account is active. If you delete your account, all associated personal data including dream entries, keywords, and account information will be permanently deleted within 30 days.</p>
+            <p>Voice recordings are deleted immediately after transcription. Payment transaction records may be retained for up to 7 years for legal and financial compliance purposes.</p>
+        </div>
+
+        <!-- Your Rights -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">⚖️</div>
+                <h2>Your Rights</h2>
+            </div>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access the personal data we hold about you</li>
+                <li>Request correction of inaccurate data</li>
+                <li>Request deletion of your account and associated data</li>
+                <li>Export your dream journal entries</li>
+                <li>Withdraw consent for optional data processing at any time</li>
+            </ul>
+            <p>To exercise any of these rights, contact us at the address below. We will respond within 30 days.</p>
+        </div>
+
+        <!-- Children -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">🔒</div>
+                <h2>Children's Privacy</h2>
+            </div>
+            <p>Somnio is intended for users aged 18 and older. We do not knowingly collect personal information from children under the age of 18. If we become aware that a child under 18 has provided us with personal data, we will delete it promptly.</p>
+        </div>
+
+        <!-- Changes -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">📝</div>
+                <h2>Changes to This Policy</h2>
+            </div>
+            <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page and notify users via the app where material changes are made. Your continued use of Somnio after any changes constitutes your acceptance of the updated policy.</p>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact-card">
+            <h2>Contact Us</h2>
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 12px;">
+                If you have any questions about this Privacy Policy or how we handle your data, please contact us:
+            </p>
+            <p style="font-size: 0.95rem;">
+                <strong>Somnio App</strong><br>
+                <a href="mailto:somniodreaminterpreter@outlook.com">Somnio Dream Interpreter</a>
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2026 Somnio &nbsp;·&nbsp; All rights reserved
+    </footer>
+
+</body>
+</html>
